@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>MongoDB Cheat Cheat</title>
+
+    <!-- Bootstrap -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+  <body ng-app="mdbApp">
+    <div class="container" ng-controller="MainController">
+		<div class="row" >
+			<div class="col-xs-12">
+	    		<h1>MongoDB Content</h1>
+				<h1 class="page-header">
+					MongoDB Client
+				</h1> 
+				<p class="lead">Using the MongoDB Client</p> 
+				<div class="row">
+					<div class="col-sm-4"> 
+						> <font color="red">use foobar</font><br />
+						switched to db foobar<br /><br />
+						> <font color="red">db</font><br />
+						foobar<br /><br />
+						> <font color="red">db.blog.remove({title: "My Blog Post"})</font><br />
+						deletes from collection<br /><br />
+					</div>
+					<div class="col-sm-4"> 
+						> <font color="red">db.blog.insert(data)</font><br />
+						stores data in the blog collection<br /><br />
+						> <font color="red">db.blog.find()</font><br />
+						returns all data in the blog collection<br /><br />
+						> <font color="red">help</font><br />
+						provides helpful content :)<br /><br />
+					</div>
+					<div class="col-sm-4"> 
+						> <font color="red">post = { "title": "My Blog Post",</font><br />
+						... <font color="red">"content": "Here's my blog post.",</font><br />
+						... <font color="red">"date": new Date() }</font><br />
+						> <font color="red">post.comments = []</font><br />
+						> <font color="red">db.blog.update({title: "My Blog Post"}, post)</font><br />
+						<b>update</b> takes two parameters:<br />
+						1. Criteria to find which document to update.<br />
+						2. The new document.<br /><br />
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre>
+						<code class="language-html" data-lang="html"><br />db.users.find({<font color="red">query criteria</font>}, {<font color="red">return criteria</font>})</code>
+					</pre>
+				</figure> 
+			</div>
+			<div class="col-sm-6" ng-repeat="modifier in modifiers"> 
+				<dl class="dl-horizontal">
+				  <dt>{{ modifier.modifier }}</dt>
+				  <dd>{{ modifier.description }}</dd>
+				</dl>
+				<figure class="highlight">
+					<pre>
+						<code class="language-html" data-lang="html">{{ modifier.code }}</code>
+					</pre>
+				</figure> 
+			</div>
+		</div> 
+	</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+
+    <!-- Modules -->
+    <script src="js/main.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/MainController.js"></script>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
