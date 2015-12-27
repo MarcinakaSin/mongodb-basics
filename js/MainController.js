@@ -44,5 +44,92 @@ app.controller('MainController', ['$scope', function($scope) {
     }
   ];
    
-
+  $scope.operators = [
+    {
+      operator: '"$lt"',
+      description: 'Less than(<)'
+    },
+    {
+      operator: '"$lte"',
+      description: 'Less than or equal to(<=)'
+    },
+    {
+      operator: '"$gt"',
+      description: 'Greater than(>)'
+    },
+    {
+      operator: '"$gte"',
+      description: 'Less than or equal to(>=)'
+    },
+    {
+      operator: '"$ne"',
+      description: 'Not Equal(!=)'
+    },
+    {
+      operator: '"$in"',
+      description: 'Used to query for a variety of values'
+    },
+    {
+      operator: '"$nin"',
+      description: 'Queries for values not in array'
+    },
+    {
+      operator: '$or',
+      description: 'Can contain other conditions'
+    },
+    {
+      operator: '"$not"',
+      description: 'metconditional: it can be applied on top of any other criteria.'
+    },
+    {
+      operator: '"$mod"',
+      description: 'Queries for keys whose values, when divided by the first value given, have a remainder of the second value.'
+    },
+    {
+      operator: '$exists',
+      description: 'Checks if key exists.'
+    },
+    {
+      operator: '/joe/i ',
+      description: '(Regular Expression) case-insensitive matching'
+    }
+  ];
+   
+  $scope.returnCrits = [
+    {
+      criteria: 'Return Syntax',
+      description: 'Return a username and email.',
+      code: '\n db.users.find({}, {"username": 1, "email": 1})'
+    },
+    {
+      criteria: 'Omit Syntax',
+      description: 'Omit return keys. (Omits username.)',
+      code: '\n db.users.find({}, {"username": 0})'
+    },
+    {
+      criteria: '"$gte" and "$lte"',
+      description: '$Less than or equal to(<=) and $greater than or equal to example',
+      code: '\n db.users.find({"age": {"$gte": 18, "$lte": 30}})'
+    },
+    {
+      criteria: '"$lt"',
+      description: 'To find someon who registered before January 1, 2007.',
+      code: '\n start = new Date("01/01/2007") \n... db.users.find({"registered": {"$lt": start}})'
+    },
+    {
+      criteria: '$in',
+      description: 'Querying for a variety of values.',
+      code: '\n db.raffle.find({"ticket_no": {"$in": [725, 542, 390]}})'
+    },
+    {
+      criteria: '$nin',
+      description: 'returns documents that don\' match the criteria in the array.',
+      code: '\n db.raffle.find({"ticket_no": {"$nin": [725, 542, 390]}})'
+    },
+    {
+      criteria: '$or',
+      description: 'Contains two conditions.',
+      code: '\n db.raffle.find({"$or": [{"ticket_no":{"$in": [725, 542, 390]}}, \n ... {"winner": true}]})'
+    }
+  ];
 }]);
