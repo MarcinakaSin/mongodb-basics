@@ -61,17 +61,7 @@
 					</pre>
 				</figure> 
 			</div>
-			<div class="col-sm-6" ng-repeat="modifier in modifiers"> 
-				<dl class="dl-horizontal">
-				  <dt>{{ modifier.modifier }}</dt>
-				  <dd>{{ modifier.description }}</dd>
-				</dl>
-				<figure class="highlight">
-					<pre>
-						<code class="language-html" data-lang="html">{{ modifier.code }}</code>
-					</pre>
-				</figure> 
-			</div>
+			<ng-view></ng-view>
 				<h1 class="page-header">
 					Operators
 				</h1> 
