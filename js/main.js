@@ -1,6 +1,18 @@
-var app = angular.module('mdbApp', [])
-	.config(function($routeProvider, $locationProvider){
-		$locationProvider.html5Mode(true);
+var app = angular.module('mdbApp', ['ngRoute']);
 
-		$routeProvider.when("/", {templateUrl: "/sections/modify.html"});
+app.config(function($routeProvider){
+
+	$routeProvider
+	.when("/modify", {
+		templateUrl: "sections/modify.html"
+	})
+	.when("/operators", {
+		templateUrl: "sections/operators.html"
+	})
+	.when("/return-criteria", {
+		templateUrl: "sections/return-criteria.html"
+	})
+	.otherwise({
+		redirectTo: '/'
 	});
+});

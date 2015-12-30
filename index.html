@@ -21,12 +21,17 @@
   <body ng-app="mdbApp">
     <div class="container" ng-controller="MainController">
 		<div class="row" >
-			<div class="col-xs-12">
-	    		<h1>MongoDB Content</h1>
-				<h1 class="page-header">
+			<div class="col-xs-12" style="margin-top:20px;">
+			<ul class="nav nav-tabs">
+			  <li role="presentation" class="active"><a href="#">MongoDB Cheat Cheat</a></li>
+			  <li role="presentation"><a href="#/modify">Modify</a></li>
+			  <li role="presentation"><a href="#/operators">Operators</a></li>
+			  <li role="presentation"><a href="#/return-criteria">Return Criteria</a></li>
+			</ul>
+				<h1 class="page-header text-center">
 					MongoDB Client
+					<p class="lead">Using the MongoDB Client</p> 
 				</h1> 
-				<p class="lead">Using the MongoDB Client</p> 
 				<div class="row">
 					<div class="col-sm-4"> 
 						> <font color="red">use foobar</font><br />
@@ -61,36 +66,12 @@
 					</pre>
 				</figure> 
 			</div>
-			<ng-view></ng-view>
-				<h1 class="page-header">
-					Operators
-				</h1> 
-			<div>
-				<div class="col-sm-4" ng-repeat="opr in operators"> 
-					<dl class="dl-horizontal">
-					  <dt>{{ opr.operator }}</dt>
-					  <dd>{{ opr.description }}</dd>
-					</dl>
-				</div>
-			</div>
-				<h1 class="page-header">
-					Return Criteria
-				</h1> 
-			<div class="col-sm-6" ng-repeat="rtnCrit in returnCrits"> 
-				<dl class="dl-horizontal">
-				  <dt>{{ rtnCrit.criteria }}</dt>
-				  <dd>{{ rtnCrit.description }}</dd>
-				</dl>
-				<figure class="highlight">
-					<pre>
-						<code class="language-html" data-lang="html">{{ rtnCrit.code }}</code>
-					</pre>
-				</figure> 
-			</div>
+			<div ng-view></div>
 		</div> 
 	</div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
 
     <!-- Modules -->
     <script src="js/main.js"></script>

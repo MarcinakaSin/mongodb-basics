@@ -1,0 +1,14 @@
+<h1 class="page-header">
+	Return Criteria
+</h1> 
+<div class="col-sm-6" ng-repeat="rtnCrit in returnCrits"> 
+	<dl class="dl-horizontal">
+	  <dt>{{ rtnCrit.criteria }}</dt>
+	  <dd>{{ rtnCrit.description }}</dd>
+	</dl>
+	<figure class="highlight">
+		<pre>
+			<code class="language-html" data-lang="html">{{ rtnCrit.code }}</code>
+		</pre>
+	</figure> 
+</div>
