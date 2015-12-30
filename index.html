@@ -23,7 +23,7 @@
 		<div class="row" >
 			<div class="col-xs-12" style="margin-top:20px;">
 			<ul class="nav nav-tabs">
-			  <li role="presentation" class="active"><a href="#">MongoDB Cheat Cheat</a></li>
+			  <li role="presentation" class="active"><a href="#/">MongoDB Cheat Cheat</a></li>
 			  <li role="presentation"><a href="#/modify">Modify</a></li>
 			  <li role="presentation"><a href="#/operators">Operators</a></li>
 			  <li role="presentation"><a href="#/return-criteria">Return Criteria</a></li>
@@ -84,5 +84,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+			  <script type="text/javascript">
+			  	$(document).ready(function(){
+			  		$("a[href^='#/']").click(function(){
+			  			$("a[href^='#/']").parent().removeClass("active");
+			  			$(this).parent().addClass("active");
+			  		});
+			  	});
+
+			  </script>
   </body>
 </html>
