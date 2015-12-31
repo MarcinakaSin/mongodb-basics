@@ -1,0 +1,27 @@
+{
+  "name": "mongodb-basics",
+  "version": "1.0.0",
+  "description": "Creating a list of MongoDB commands so I can reinforce mongoDB, keep a list of popular commands and also get practice with AngularJS",
+  "main": "index.html",
+  "dependencies": {
+    "bower": "^1.7.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcinakaSin/mongodb-basics.git"
+  },
+  "keywords": [
+    "MongoDB",
+    "Angular-Routing"
+  ],
+  "author": "Marcin Ufniarz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MarcinakaSin/mongodb-basics/issues"
+  },
+  "homepage": "https://github.com/MarcinakaSin/mongodb-basics#readme"
+}
