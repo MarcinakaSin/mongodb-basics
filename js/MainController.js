@@ -132,4 +132,83 @@ app.controller('MainController', ['$scope', function($scope) {
       code: '\n db.raffle.find({"$or": [{"ticket_no":{"$in": [725, 542, 390]}}, \n ... {"winner": true}]})'
     }
   ];
+
+
+  $scope.arrays = [
+    {
+      modifier: '"$all"',
+      description: 'Match array by more than one element.',
+      code: '\n db.food.find({"fruit":{$all: ["apple","banana"]}})'
+    },
+    {
+      modifier: '"$size"',
+      description: 'Query an array by a given size.',
+      code: '\n db.food.find({"fruit":{"$size": 3 }})'
+    },
+    {
+      modifier: '$slice',
+      description: 'Used to return a subset of elements for an array key. \nReturns the first 10. (To return the last 10, we would use -10.)',
+      code: '\n db.blog.posts.findOne({criteria}, {"commnets":{"$slice": 10}})'
+    },
+    {
+      modifier: '"$slice',
+      description: 'To obtain a middle result. Returns 24-34.',
+      code: '\n db.blog.posts.findOne({criteria}, {"commnets":{"$slice": [23, 10]}})'
+    },
+    {
+      modifier: '"$elemMatch"',
+      description: 'Allows us to "group" our criteria. Only needed if you have more than one key you want to match on in an embedded document.',
+      code: '\n db.blog.find({"comments":{"$elemMatch": {"author": "joe", "score":{"$gte":5}}}})'
+    },
+    {
+      modifier: '$where',
+      description: 'Allows you to execute arbitrary JavaScript as part of your query. $where should not be used unless needed.',
+      code: '\n db.foo.find({"$where": function(){...}}) \n db.foo.find({"$where": "this.x ==10"}) -- Can also be a string.' 
+    }
+  ];
+
+  $scope.cursors = [
+    {
+      cursor: 'Limit',
+      description: 'Limits number of results.',
+      code: '\n db.c.find().limit(3)'
+    },
+    {
+      cursor: 'Skip',
+      description: 'Skips over the first few results.',
+      code: '\n db.c.find().skip(3)'
+    },
+    {
+      cursor: 'Sort',
+      description: 'Sorts results by value. (1 = ascending, -1 = descending)',
+      code: '\n db.c.find().sort({username:1, age:-1})'
+    }
+  ];
+
+  $scope.details = [
+    {
+      section: '"cursor":"BasicCursor"',
+      description: 'This means the query didn\'t use an index.'
+    },
+    {
+      section: '"nscanned":64',
+      description: 'Number of documents that the database looked through. This should be as close to "n" as possible.'
+    },
+    {
+      section: '"n":64',
+      description: 'Number of documents returned.'
+    },
+    {
+      section: '"millis":0',
+      description: 'Number of milliseconds it took the db to execute the query. (0 is good to shoot for)'
+    },
+    {
+      section: '"cursor":"BtreeCursor age_1"',
+      description: 'Identifies the name of the index used.'
+    },
+    {
+      section: '"allPlans":[...]',
+      description: 'Lists all the plans MongoDB considered for the query.'
+    }
+  ];
 }]);

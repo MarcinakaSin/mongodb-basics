@@ -12,6 +12,15 @@ app.config(function($routeProvider){
 	.when("/return-criteria", {
 		templateUrl: "sections/return-criteria.html"
 	})
+	.when("/arrays", {
+		templateUrl: "sections/arrays.html"
+	})
+	.when("/cursors", {
+		templateUrl: "sections/cursors.html"
+	})
+	.when("/explain-hint", {
+		templateUrl: "sections/explain-hint.html"
+	})
 	.otherwise({
 		redirectTo: '/'
 	});
