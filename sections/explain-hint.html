@@ -1,15 +1,19 @@
-<h1 class="page-header text-center">
-	Explain & Hint
-</h1> 
-<p class="lead">
-<b>explain</b> - will return information about the indexes used for the query(if any) and stats about timing and the number of documents scanned.
-</p>
-<figure class="highlight">
-	<pre>
-		<code class="language-html" data-lang="html">db.food.find().explain()</code>
-	</pre>
-</figure> 
-<div>
+<div class="row">
+	<div class="col-xs-12">
+		<h1 class="page-header text-center">
+			Explain & Hint
+		</h1> 
+		<p class="lead">
+		<b>explain</b> - will return information about the indexes used for the query(if any) and stats about timing and the number of documents scanned.
+		</p>
+		<figure class="highlight">
+			<pre>
+				<code class="language-html" data-lang="html">db.food.find().explain()</code>
+			</pre>
+		</figure> 
+	</div>
+</div>
+<div class="row">
 	<div class="col-sm-4" ng-repeat="detail in details" style="min-height: 100px;"> 
 		<p>
 		  <b>{{ detail.section }}</b>

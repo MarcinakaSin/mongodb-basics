@@ -21,7 +21,10 @@ app.config(function($routeProvider){
 	.when("/explain-hint", {
 		templateUrl: "sections/explain-hint.html"
 	})
+	.when("/client", {
+		templateUrl: "sections/client.html"
+	})
 	.otherwise({
-		redirectTo: '/'
+		redirectTo: '/client'
 	});
 });

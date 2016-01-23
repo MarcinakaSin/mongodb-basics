@@ -19,59 +19,54 @@
 
   </head>
   <body ng-app="mdbApp">
-    <div class="container" ng-controller="MainController">
-		<div class="row" >
-			<div class="col-xs-12" style="margin-top:20px;">
-			<ul class="nav nav-tabs">
-			  <li role="presentation" class="active"><a href="#/">MongoDB Cheat Cheat</a></li>
-			  <li role="presentation"><a href="#/modify">Modify</a></li>
-			  <li role="presentation"><a href="#/operators">Operators</a></li>
-			  <li role="presentation"><a href="#/return-criteria">Return Criteria</a></li>
-			  <li role="presentation"><a href="#/arrays">Querying Arrays</a></li>
-			  <li role="presentation"><a href="#/cursors">Cursors</a></li>
-			  <li role="presentation"><a href="#/explain-hint">Explain & Hint</a></li>
-			</ul>
-				<h1 class="page-header text-center">
-					MongoDB Client
-					<p class="lead">Using the MongoDB Client</p> 
-				</h1> 
-				<div class="row">
-					<div class="col-sm-4"> 
-						> <font color="red">use foobar</font><br />
-						switched to db foobar<br /><br />
-						> <font color="red">db</font><br />
-						foobar<br /><br />
-						> <font color="red">db.blog.remove({title: "My Blog Post"})</font><br />
-						deletes from collection<br /><br />
-					</div>
-					<div class="col-sm-4"> 
-						> <font color="red">db.blog.insert(data)</font><br />
-						stores data in the blog collection<br /><br />
-						> <font color="red">db.blog.find()</font><br />
-						returns all data in the blog collection<br /><br />
-						> <font color="red">help</font><br />
-						provides helpful content :)<br /><br />
-					</div>
-					<div class="col-sm-4"> 
-						> <font color="red">post = { "title": "My Blog Post",</font><br />
-						... <font color="red">"content": "Here's my blog post.",</font><br />
-						... <font color="red">"date": new Date() }</font><br />
-						> <font color="red">post.comments = []</font><br />
-						> <font color="red">db.blog.update({title: "My Blog Post"}, post)</font><br />
-						<b>update</b> takes two parameters:<br />
-						1. Criteria to find which document to update.<br />
-						2. The new document.<br /><br />
-					</div>
-				</div>
-				<figure class="highlight">
-					<pre>
-						<code class="language-html" data-lang="html"><br />db.users.find({<font color="red">query criteria</font>}, {<font color="red">return criteria</font>})</code>
-					</pre>
-				</figure> 
-			</div>
-			<div ng-view></div>
-		</div> 
+
+  	<!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">MongoDB Cheat Cheat</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+		  	<li class="active"><a href="#/client">MongoDB Client</a></li>
+		  	<li><a href="#/modify">Modify</a></li>
+		  	<li><a href="#/operators">Operators</a></li>
+		  	<li><a href="#/return-criteria">Return Criteria</a></li>
+		  	<li><a href="#/arrays">Querying Arrays</a></li>
+		  	<li><a href="#/cursors">Cursors</a></li>
+		  	<li><a href="#/explain-hint">Explain & Hint</a></li>
+            <!--<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>-->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+    <div class="container" ng-controller="MainController" style="margin-top:20px;">
+		<div ng-view></div>
 	</div>
+	<footer class="footer">
+      <div class="container">
+        <p class="text-muted">Created by Marcin M. Ufniarz</p>
+      </div>
+    </footer>
 
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>

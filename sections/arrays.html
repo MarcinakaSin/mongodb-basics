@@ -1,14 +1,21 @@
-<h1 class="page-header text-center">
-	Querying Arrays
-</h1> 
-<div class="col-sm-6" ng-repeat="array in arrays"> 
-	<dl class="dl-horizontal" style="height: 50px;">
-	  <dt>{{ array.modifier }}</dt>
-	  <dd>{{ array.description }}</dd>
-	</dl>
-	<figure class="highlight">
-		<pre>
-			<code class="language-html" data-lang="html">{{ array.code }}</code>
-		</pre>
-	</figure> 
+
+<div class="row">
+	<div class="col-xs-12">
+		<h1 class="page-header text-center">
+			Querying Arrays
+		</h1> 
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-6" ng-repeat="array in arrays"> 
+		<dl class="dl-horizontal" style="height: 50px;">
+		  <dt>{{ array.modifier }}</dt>
+		  <dd>{{ array.description }}</dd>
+		</dl>
+		<figure class="highlight">
+			<pre>
+				<code class="language-html" data-lang="html">{{ array.code }}</code>
+			</pre>
+		</figure> 
+	</div>
 </div>

@@ -1,0 +1,46 @@
+
+<div class="row">
+	<div class="col-xs-12">
+		<h1 class="page-header text-center">
+			MongoDB Client
+			<p class="lead">Using the MongoDB Client</p> 
+		</h1> 
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-4"> 
+		> <font color="red">use foobar</font><br />
+		switched to db foobar<br /><br />
+		> <font color="red">db</font><br />
+		foobar<br /><br />
+		> <font color="red">db.blog.remove({title: "My Blog Post"})</font><br />
+		deletes from collection<br /><br />
+	</div>
+	<div class="col-sm-4"> 
+		> <font color="red">db.blog.insert(data)</font><br />
+		stores data in the blog collection<br /><br />
+		> <font color="red">db.blog.find()</font><br />
+		returns all data in the blog collection<br /><br />
+		> <font color="red">help</font><br />
+		provides helpful content :)<br /><br />
+	</div>
+	<div class="col-sm-4"> 
+		> <font color="red">post = { "title": "My Blog Post",</font><br />
+		... <font color="red">"content": "Here's my blog post.",</font><br />
+		... <font color="red">"date": new Date() }</font><br />
+		> <font color="red">post.comments = []</font><br />
+		> <font color="red">db.blog.update({title: "My Blog Post"}, post)</font><br />
+		<b>update</b> takes two parameters:<br />
+		1. Criteria to find which document to update.<br />
+		2. The new document.<br /><br />
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<figure class="highlight">
+			<pre>
+				<code class="language-html" data-lang="html"><br />db.users.find({<font color="red">query criteria</font>}, {<font color="red">return criteria</font>})</code>
+			</pre>
+		</figure> 
+	</div>
+</div>
